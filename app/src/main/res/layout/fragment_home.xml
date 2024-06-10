@@ -1,0 +1,71 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <!-- Thông tin cá nhân -->
+    <ImageView
+        android:id="@+id/profile_image"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:src="@drawable/nguyenhuyhoang"/>
+
+    <TextView
+        android:id="@+id/text_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Họ và Tên: Nguyễn Huy Hoàng"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/text_mssv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MSSV: 2001215790"
+        android:textSize="18sp"
+        android:layout_marginTop="8dp"/>
+    <TextView
+        android:id="@+id/text_Lop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lop: 12DHTH02"
+        android:textSize="18sp"
+        android:layout_marginTop="8dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sở thích:"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/text_music"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="- Nghe nhạc: Lofi, Rap"
+        android:textSize="16sp"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:id="@+id/text_books"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="- Đọc sách: Trinh thám, Khoa học viễn tưởng, Công nghệ"
+        android:textSize="16sp"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:id="@+id/text_technology"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="- Thể thao: Đá bóng"
+        android:textSize="16sp"
+        android:layout_marginTop="8dp"/>
+
+
+</LinearLayout>
