@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -13,22 +15,20 @@ import androidx.annotation.Nullable;
 import com.bumptech.glide.Glide;
 import com.example.ktl2_ct2_nguyenhuyhoang.CountryDetailActivity;
 import com.example.ktl2_ct2_nguyenhuyhoang.Model.Country;
-import com.example.ktl2_ct2_nguyenhuyhoang.databinding.CustomCountryItemListviewBinding;
+import com.example.ktl2_ct2_nguyenhuyhoang.R;
 
 import java.util.ArrayList;
 
-public class CustomAdapterCountryListView extends ArrayAdapter {
+public class CustomCountryAdapter extends ArrayAdapter {
     Context context;
     int layoutItem;
     ArrayList<Country> list = new ArrayList<>();
-    public CustomAdapterCountryListView(@NonNull Context context, int resource, @NonNull ArrayList<Country> list) {
+    public CustomCountryAdapter(@NonNull Context context, int resource, @NonNull ArrayList<Country> list) {
         super(context, resource, list);
         this.context = context;
         this.layoutItem = resource;
         this.list = list;
     }
-
-    private CustomCountryItemListviewBinding customCountryItemListviewBinding;
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
@@ -36,11 +36,16 @@ public class CustomAdapterCountryListView extends ArrayAdapter {
         if(convertView==null)
         {
             convertView= LayoutInflater.from(context).inflate(layoutItem,null);
-
         }
-        customCountryItemListviewBinding.textViewName.setText(item.getCommonName());
-        customCountryItemListviewBinding.textViewRegion.setText( "Continent: " + item.getContinent());
-        Glide.with(context).load(item.getImgUrl()).into(customCountryItemListviewBinding.imageViewItem);
+
+        TextView textViewName = convertView.findViewById(R.id.textViewName);
+        TextView textViewRegion = convertView.findViewById(R.id.textViewRegion);
+        ImageView imageViewItem = convertView.findViewById(R.id.imageViewItem);
+
+        textViewName.setText(item.getCommonName());
+        textViewRegion.setText("Continent: " + item.getContinent());
+        Glide.with(context).load(item.getImgUrl()).into(imageViewItem);
+
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,6 +54,7 @@ public class CustomAdapterCountryListView extends ArrayAdapter {
                 context.startActivity(intent);
             }
         });
+
         return convertView;
     }
 }

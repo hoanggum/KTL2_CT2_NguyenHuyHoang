@@ -6,11 +6,11 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.example.ktl2_ct2_nguyenhuyhoang.ContinentFragment;
+import com.example.ktl2_ct2_nguyenhuyhoang.ContinentTabViewFragment;
 
-public class WorldViewPaperAdapter extends FragmentPagerAdapter {
+public class viewPaperAdapter extends FragmentPagerAdapter {
     final private int TAB_COUNT = 5;
-    public WorldViewPaperAdapter(FragmentManager fm) {
+    public viewPaperAdapter(FragmentManager fm) {
         super(fm);
     }
 //
@@ -19,18 +19,18 @@ public class WorldViewPaperAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         Fragment fragment = null;
         if (position == 0) {
-            fragment = new ContinentFragment("Asia");
+            fragment = new ContinentTabViewFragment("Asia");
         } else if (position == 1) {
-            fragment = new ContinentFragment("Africa");
+            fragment = new ContinentTabViewFragment("Africa");
         }
         else if (position == 2) {
-            fragment = new ContinentFragment("Europe");
+            fragment = new ContinentTabViewFragment("Europe");
         }
         else if (position == 3) {
-            fragment = new ContinentFragment("South America");
+            fragment = new ContinentTabViewFragment("South America");
         }
         else if (position == 4) {
-            fragment = new ContinentFragment("Oceania");
+            fragment = new ContinentTabViewFragment("Oceania");
         }
 
         return fragment;

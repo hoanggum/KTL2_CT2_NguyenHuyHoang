@@ -8,7 +8,7 @@
     android:weightSum="100"
     android:background="@color/black"
     android:orientation="vertical"
-    tools:context=".WorldFragment">
+    tools:context=".Bai2Fragment">
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab"

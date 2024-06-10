@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
                     loadFragment(new HomeFragment()); // Load Bai2 Fragment khi chọn Home
                     return true;
                 }else if (id == R.id.navigation_bai2) {
-                    loadFragment(new WorldFragment()); // Load SearchFragment khi chọn Search
+                    loadFragment(new Bai2Fragment()); // Load SearchFragment khi chọn Search
                     return true;
                 }
                 return false;

@@ -23,20 +23,10 @@ public class CountryDetailActivity extends AppCompatActivity {
 
         Glide.with(this).load(country.getImgUrl()).into(activityCountryDetailBinding.imageViewItem);
         activityCountryDetailBinding.textViewCommonName.setText(country.getCommonName());
-        activityCountryDetailBinding.textViewOfficialName.setText("Official Name: " + country.getOfficialName());
+        activityCountryDetailBinding.textViewOfficialName.setText(country.getOfficialName());
         activityCountryDetailBinding.textViewCapital.setText("Capital: " + country.getCapital());
         activityCountryDetailBinding.textViewContinent.setText("Continent: " + country.getContinent());
         activityCountryDetailBinding.textViewLanguage.setText("Language: " + country.getLanguage());
         activityCountryDetailBinding.textViewPopulation.setText("Population: " + String.valueOf(country.getPopulation()));
-
-        addEvents();
-    }
-    void addEvents(){
-        activityCountryDetailBinding.buttonBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
     }
 }

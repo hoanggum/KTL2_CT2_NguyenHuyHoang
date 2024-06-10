@@ -17,10 +17,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.bumptech.glide.request.RequestOptions;
-import com.example.ktl2_ct2_nguyenhuyhoang.CustomAdapter.CustomAdapterCountryListView;
+import com.example.ktl2_ct2_nguyenhuyhoang.CustomAdapter.CustomCountryAdapter;
 import com.example.ktl2_ct2_nguyenhuyhoang.Model.Country;
 import com.example.ktl2_ct2_nguyenhuyhoang.databinding.FragmentContinentBinding;
 
@@ -32,10 +29,10 @@ import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link ContinentFragment#newInstance} factory method to
+ * Use the {@link ContinentTabViewFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ContinentFragment extends Fragment {
+public class ContinentTabViewFragment extends Fragment {
 
     private FragmentContinentBinding fragmentContinentBinding;
     private String continent;
@@ -48,11 +45,11 @@ public class ContinentFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public ContinentFragment() {
+    public ContinentTabViewFragment() {
         // Required empty public constructor
         this.continent = "";
     }
-    public ContinentFragment(String continent) {
+    public ContinentTabViewFragment(String continent) {
         // Required empty public constructor
         this.continent = continent;
     }
@@ -66,8 +63,8 @@ public class ContinentFragment extends Fragment {
      * @return A new instance of fragment ContinentFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static ContinentFragment newInstance(String param1, String param2) {
-        ContinentFragment fragment = new ContinentFragment();
+    public static ContinentTabViewFragment newInstance(String param1, String param2) {
+        ContinentTabViewFragment fragment = new ContinentTabViewFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -94,7 +91,7 @@ public class ContinentFragment extends Fragment {
 
     String url = "https://restcountries.com/v3.1/independent?status=true&fields=languages,capital,name,population,continents,flags";
     private ArrayList<Country> list;
-    CustomAdapterCountryListView adapter;
+    CustomCountryAdapter adapter;
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -156,7 +153,7 @@ public class ContinentFragment extends Fragment {
                     }
                 }
             }
-            adapter = new CustomAdapterCountryListView(context, R.layout.custom_country_item_listview, list);
+            adapter = new CustomCountryAdapter(context, R.layout.custom_country_item_listview, list);
             fragmentContinentBinding.listViewItems.setAdapter(adapter);
             fragmentContinentBinding.textViewLoading.setVisibility(View.GONE);
         } catch (JSONException e) {

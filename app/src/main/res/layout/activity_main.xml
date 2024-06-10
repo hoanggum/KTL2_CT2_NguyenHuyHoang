@@ -11,7 +11,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/black"
+        android:background="#D81B60"
         android:minHeight="?attr/actionBarSize"
         app:title="KTL2"
         app:titleTextColor="@color/white"
@@ -43,6 +43,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:background="#8E24AA"
+        android:background="#D81B60"
         app:menu="@menu/navigation_bottom_main" />
 </LinearLayout>
