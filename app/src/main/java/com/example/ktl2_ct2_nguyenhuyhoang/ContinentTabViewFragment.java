@@ -115,12 +115,12 @@ public class ContinentTabViewFragment extends Fragment {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(context, "Có lỗi xảy ra khi tải dữ liệu", Toast.LENGTH_LONG).show();
+                Toast.makeText(context, "Quá thời gian. Có lỗi xảy ra khi tải dữ liệu", Toast.LENGTH_LONG).show();
                 fragmentContinentBinding.textViewLoading.setVisibility(View.GONE);
             }
         });
         // Thiết lập thời gian chờ và số lần thử lại
-        int socketTimeout = 50000; // 30 giây
+        int socketTimeout = 30000; // 30 giây
         request.setRetryPolicy(new DefaultRetryPolicy(
                 socketTimeout,
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,

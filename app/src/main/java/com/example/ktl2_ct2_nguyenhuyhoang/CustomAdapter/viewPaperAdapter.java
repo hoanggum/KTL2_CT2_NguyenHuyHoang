@@ -9,7 +9,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import com.example.ktl2_ct2_nguyenhuyhoang.ContinentTabViewFragment;
 
 public class viewPaperAdapter extends FragmentPagerAdapter {
-    final private int TAB_COUNT = 5;
+    final private int TAB_COUNT = 6;
     public viewPaperAdapter(FragmentManager fm) {
         super(fm);
     }
@@ -31,6 +31,9 @@ public class viewPaperAdapter extends FragmentPagerAdapter {
         }
         else if (position == 4) {
             fragment = new ContinentTabViewFragment("Oceania");
+        }
+        else if (position == 5) {
+            fragment = new ContinentTabViewFragment("North America");
         }
 
         return fragment;
@@ -57,6 +60,9 @@ public class viewPaperAdapter extends FragmentPagerAdapter {
         }
         else if (position == 4) {
             title = "Oceania";
+        }
+        else if (position == 5) {
+            title = "North America";
         }
         return title;
     }
